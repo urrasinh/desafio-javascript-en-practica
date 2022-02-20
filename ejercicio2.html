@@ -35,13 +35,15 @@
         </div>
     </div>
     <script>
-        let color = document.getElementById('buton');
-        color.addEventListener('click', function () {
-            alert('click sobre la caja');
-        });
+        const caja = document.getElementById('caja')  // seleccion del elemento a modificar
+        const btn = document.querySelectorAll("button") // seleccion de elemento que tomará acción
 
-        document.getElementById('caja').setAttribute('style', 'background-color: red;);
-
+        btn.forEach((btn) => { // metodo forEach para recorrer el elemento boton
+            btn.addEventListener("click", function () { // escuchar evento click
+                const color = btn.style.backgroundColor; // asigna estilo
+                caja.style.backgroundColor = color; 
+            })
+        })     
     </script>
 </body>
 
