@@ -35,7 +35,25 @@
         </div>
     </div>
     <script>
-    // Escríbe aquí tu código
+        const valor1 = document.querySelector('#valor1')
+        const valor2 = document.querySelector('#valor2')
+        const suma = document.querySelector('#btn-sumar')
+        const resta = document.querySelector('#btn-restar')
+
+
+        suma.addEventListener("click", function () {
+            const sumarN = parseInt(valor1.value) + parseInt(valor2.value)
+            document.querySelector(".resultado").innerHTML = sumarN
+        })
+
+        resta.addEventListener("click", function () {
+            const restarN = parseInt(valor1.value) - parseInt(valor2.value)
+            if (restarN < 0) {
+                document.querySelector(".resultado").innerHTML = 0
+            } else {
+                document.querySelector(".resultado").innerHTML = restarN
+            }
+        })
     </script>
 </body>
 
